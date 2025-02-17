@@ -14,8 +14,6 @@ const Watch = () => {
   const movieId = query.get("movieId");
 
 
-
-
   useEffect(() => {
     const fetchMovie = async () => {
       try {
@@ -38,7 +36,6 @@ const Watch = () => {
       fetchMovie();
     }
   }, [movieId]);
-
 
   if (!movie) return <div>Loading...</div>;
 
