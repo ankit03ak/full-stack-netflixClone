@@ -1,6 +1,6 @@
 import { NotificationsNone, Language, Settings } from "@mui/icons-material";
 import "./topbar.css";
-import { Link,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext/AuthContext"
 import { useContext } from "react";
 

@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import "./newList.css";
-import axios from "axios";
 import {getMovies} from "../../context/movieContext/apiCalls"
 import {ListContext} from "../../context/listContext/ListContext"
 import {MovieContext} from "../../context/movieContext/MovieContext"

@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 // import Chart from "../../components/chart/Chart"
 import "./product.css"
 // import { productData } from "../../dummyData"
-import { Public, Publish } from "@mui/icons-material"
+import { Publish } from "@mui/icons-material"
 import { useEffect, useState } from "react";
 import axios from "axios";
 

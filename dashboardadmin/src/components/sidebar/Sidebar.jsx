@@ -1,4 +1,4 @@
-import { AttachMoney, BarChart, ChatBubbleOutline, DynamicFeed, LineStyle, MailOutline, PermIdentity, PlayCircleOutline, Report, Timeline, TrendingUp, WorkOutline } from '@mui/icons-material'
+import { BarChart, ChatBubbleOutline, DynamicFeed, LineStyle, MailOutline, PermIdentity, PlayCircleOutline, Report, Timeline, TrendingUp, WorkOutline } from '@mui/icons-material'
 import './sidebar.css'
 import { Link } from 'react-router-dom'
 import ListIcon from '@mui/icons-material/List';

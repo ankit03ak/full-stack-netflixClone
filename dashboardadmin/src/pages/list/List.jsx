@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
 import "./list.css"
-import { Public, Publish } from "@mui/icons-material"
 import { useEffect, useState } from "react";
 import axios from "axios";
 
