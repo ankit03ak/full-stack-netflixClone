@@ -1,0 +1,98 @@
+.navbar{
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: linear-gradient(to top, transparent 0%, rbg(0,0,0,0.3) 50%);
+
+    &.scrolled{
+        background-color: var(--main-color);
+    }
+
+    .container{
+        padding: 0px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+
+        .left{
+            display: flex;
+            align-items: center;
+            img{
+                height: 25px;
+                margin-right:40px ;
+            }
+            span{
+                margin-right: 20px ;
+                cursor: pointer;
+            }
+
+        }
+        .right{
+            display: flex;
+            align-items: center;
+
+            .icon{
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+            img{
+                height: 35px;
+                width: 35px;
+                border-radius: 100px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+
+        .profile{
+            margin-right: 30px;
+            .icon{
+                margin-top: 5px;
+                margin-left: 0px;
+                font-size: 25px;
+            }
+            .options{
+                width: 100px;
+                display: none;
+                background-color: rgb(0, 0, 0);
+                border-radius: 5px;
+                text-align: center;
+
+
+                .setting:hover{
+                    border-radius: 5px;
+                    background-color: rgb(43, 255, 0);
+                    transition: background-color 0.15s ease-in-out;
+                }
+                .logout:hover{
+                    border-radius: 5px;
+                    background-color: rgb(255, 5, 76);
+                    transition: background-color 0.15s ease-in-out;
+                }
+
+                .admin:hover{
+                    border-radius: 5px;
+                    background-color: rgb(43, 255, 0);
+                    transition: background-color 0.15s ease-in-out;
+                }
+            }
+
+            span{
+                padding: 10px;
+                cursor: pointer;
+            }
+            &:hover{
+                .options{
+                    display: flex;
+                    flex-direction: column ;
+                    position: absolute;
+                }
+            }
+        }
+        
+    }
+}
