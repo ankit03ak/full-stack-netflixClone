@@ -43,6 +43,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://netflix-api1-4syc.onrender.com/api/"
+  }
+  
 }

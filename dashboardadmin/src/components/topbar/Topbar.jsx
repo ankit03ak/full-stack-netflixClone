@@ -21,7 +21,7 @@ const Topbar = () => {
 
 
 const handleWatch = () =>{
-  window.location.href = "http://localhost:5174/";  //frontend Link
+  window.location.href = "https://deploy-netflix-ui01.vercel.app/";  //frontend Link
 }
 
 

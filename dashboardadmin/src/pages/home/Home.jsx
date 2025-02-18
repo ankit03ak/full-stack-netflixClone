@@ -25,12 +25,16 @@ const Home = () => {
 
   const [userStats, setUserStats] = useState([]);
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
+
 
   useEffect(()=>{
 
     const getUserStats = async ()=>{
       try {
-        const res = await axios.get("/users/stats",
+        const res = await axios.get(`${API_BASE_URL}/api/users/stats`,
           {
             headers: {
               token:
