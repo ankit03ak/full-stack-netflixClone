@@ -8,7 +8,7 @@ import {
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post("api/auth/login", user);
+    const res = await axios.post("https://netflix-api1-4syc.onrender.com/api/auth/login", user);
     dispatch(loginSuccess(res.data));
     // return res.data;
   } catch (err) {
