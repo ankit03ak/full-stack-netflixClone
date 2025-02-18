@@ -13,11 +13,14 @@ const Watch = () => {
   const query = new URLSearchParams(location.search);
   const movieId = query.get("movieId");
 
+  const URL = import.meta.env.VITE_API_BASE_URL;
+
+
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const res = await axios.get(`/api/movies/find/${movieId}`
+        const res = await axios.get(`${URL}/api/movies/find/${movieId}`
           ,
           {
             headers: {

@@ -10,13 +10,15 @@ const Home = ({type}) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
 
+  const URL = import.meta.env.VITE_API_BASE_URL;
+
 
 
   useEffect(() => {
     const getRandomLists = async () => {
       try {
         const res = await axios.get(
-          `/api/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,
+          `${URL}/api/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,
 
            {
             headers: {

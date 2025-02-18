@@ -9,11 +9,15 @@ function Featured({type}) {
     const [content, setContent] = useState({});
     const navigate = useNavigate();
 
+    const URL = import.meta.env.VITE_API_BASE_URL;
+    console.log(URL)
+
+
     
     useEffect(()=>{
         const getRandomContent = async () => {
             try {
-                const res = await axios.get(`/api/movies/random?type=${type}`,
+                const res = await axios.get(`${URL}/api/movies/random?type=${type}`,
                     {
                         headers: {
                           token:
