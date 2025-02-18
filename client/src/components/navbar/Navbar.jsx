@@ -31,7 +31,7 @@ const Navbar = () => {
       window.location.href = "https://adminui01.vercel.app/";
     }
     else{
-      alert("You are not an admin 🚫");
+      alert("You are not an admin 🚫")
     }
 
     
