@@ -16,13 +16,16 @@ const Product = () => {
     // Extract the query parameter
     const query = new URLSearchParams(location.search);
     const movieId = query.get("movieId");
+
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   
     // console.log(movieId);
 
     useEffect(() => {
         const fetchMovie = async () => {
           try {
-            const res = await axios.get(`/movies/find/${movieId}`
+            const res = await axios.get(`${API_BASE_URL}/api/movies/find/${movieId}`
               ,
               {
                 headers: {

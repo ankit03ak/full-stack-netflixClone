@@ -43,6 +43,10 @@ const NewProduct = () => {
     
   };
 
+
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
   const handleUpload = async () => {
     let uploadedCount = 0;
 
@@ -87,14 +91,14 @@ const NewProduct = () => {
     }
 
     try {
-      await axios.post("/movies", movie,
+      await axios.post(`${API_BASE_URL}/api/movies`, movie,
         {
           headers: {
             token:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NmJjYjlmNzEyOTQyYThjODZjMGZiZSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTczOTU5NzM1MSwiZXhwIjoxNzQwMjAyMTUxfQ.znKVoYDvKRMK6I3lJffyI0XOstHiGF91sy9ZGjDE82I"
           },
         }
-      ); // Replace with your backend API URL
+      ); 
       alert("Created successfully!");
     } catch (error) {
       console.error("Error saving movie:", error);

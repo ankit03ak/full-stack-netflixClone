@@ -28,7 +28,7 @@ const Navbar = () => {
     const user = JSON.parse(res);
     
     if(user.isAdmin === true){
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "https://adminui01.vercel.app/";
     }
     else{
       alert("You are not an admin 🚫");
