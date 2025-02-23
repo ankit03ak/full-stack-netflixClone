@@ -32,9 +32,7 @@ const Navbar = () => {
     }
     else{
       alert("You are not an admin 🚫")
-    }
-
-    
+    } 
   };
 
     // console.log(isScrolled);
