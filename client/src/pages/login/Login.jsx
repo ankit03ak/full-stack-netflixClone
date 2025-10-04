@@ -4,31 +4,40 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { login } from "../../context/apiCalls";
+import { toast } from "sonner";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginError, setLoginError] = useState(null); 
   const { dispatch, isFetching } = useContext(AuthContext);
   const navigate = useNavigate();
+  
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+const handleLogin = async (e) => {
+  e.preventDefault();
 
-    if (!email || !password) {
-      setLoginError("Both fields are required!");
-      return;
+  if (!email || !password) {
+    toast.error("Both fields are required!");
+    return;
+  }
+
+  try {
+    const response = await login({ email, password }, dispatch);
+
+    if (response?.success) {
+      toast.success("Login successful!");
+      navigate("/");
+    } else {
+      toast.error(response?.message || "Invalid email or password!");
     }
+  } catch (error) {
+    // Handle unexpected errors
+    console.error("Login error:", error);
+    toast.error("Something went wrong. Please try again.");
+  }
+};
 
-    await login({ email, password }, dispatch);
-    // if (response?.success) {
-    //   console.log("Login Success");
-    //   // navigate("/"); 
-    // } else {
-    //   console.log("Login Failed")
-    //   // setLoginError("Invalid email or password!");
-    // }
-  };
 
   const newToHere = () => {
     navigate("/register");
@@ -65,7 +74,6 @@ const Login = () => {
           <button className="loginButton" type="submit" disabled={isFetching}>
             {isFetching ? "Signing In..." : "Sign In"}
           </button>
-          {loginError && <span className="error">{loginError}</span>} {/* ✅ Show error message */}
           <span>
             New to Netflix?{" "}
             <b className="newToHere" onClick={newToHere}>

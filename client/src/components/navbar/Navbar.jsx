@@ -5,6 +5,7 @@ import {ArrowDropDown, Notifications } from '@mui/icons-material';
 import { useState } from 'react';
 import { Link,useNavigate } from "react-router-dom";
 import { AuthContext } from '../../context/AuthContext';
+import { toast } from "sonner";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +21,7 @@ const Navbar = () => {
     const handleLogout = () => {
       dispatch({ type: "LOGOUT" }); 
       localStorage.removeItem("user"); 
+      toast.success("Logged out successful!");
       navigate("/");
   };
 

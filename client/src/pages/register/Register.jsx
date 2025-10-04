@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { register } from "../../context/apiCalls";
+import { toast } from "sonner";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -12,18 +13,24 @@ const Register = () => {
   const { dispatch, error, isFetching } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!username || !email || !password) {
-      console.error("All fields are required");
-      return;
-    }
+  if (!username || !email || !password) {
+    toast.error("All fields are required!");
+    return;
+  }
 
+  const response = await register({ username, email, password }, dispatch);
 
-    await register({ username, email, password }, dispatch);
-    navigate("/login"); 
-  };
+  if (response?.success) {
+    toast.success("Account created successfully! Please log in.");
+    navigate("/login");
+  } else {
+    toast.error("Something went wrong. Try again!");
+  }
+};
+
 
   return (
     <div className="register">

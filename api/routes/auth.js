@@ -13,7 +13,16 @@ router.post("/register", async (req, res) => {
 
     try {
         const user = await newUser.save();
-        return res.status(201).json(user); // Return after sending a response
+
+        const accessToken = jwt.sign(
+            {id:user._id, isAdmin: user.isAdmin}, 
+            process.env.SECRET_KEY,
+            {expiresIn : "90d"}
+            );
+
+        const { password, ...info } = user._doc;
+
+        return res.status(201).json({ ...info, accessToken });
     } catch (error) {
         console.error("Error during registration:", error);
         return res.status(500).json({ message: "Internal Server Error", error });
