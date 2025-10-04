@@ -1,12 +1,10 @@
 import Chart from "../../components/chart/Chart"
-import WidgetSm from "../../components/widgetSm/WidgetSm"
 import WidgetLg from "../../components/widgetLg/WidgetLg"
-import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo"
-import "./home.css"
+import "./analytics.css"
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 
-const Home = () => {
+const Analytics = () => {
   // console.log(userData);
   const MONTHS = useMemo(()=>[
     "Jan",
@@ -23,14 +21,12 @@ const Home = () => {
     "Dec"
   ],[])
 
-
-  
-
-
-
   const [userStats, setUserStats] = useState([]);
 
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+
+
 
   useEffect(()=>{
 
@@ -44,6 +40,7 @@ const Home = () => {
             },
           }
         )
+
 
         const statsList = res.data.sort(function (a, b) {
           return a._id - b._id;
@@ -60,18 +57,16 @@ const Home = () => {
     };
     getUserStats();
 
-  },[API_BASE_URL, MONTHS])
+  },[API_BASE_URL,MONTHS])
 
   return (
     <div className="home">
-      <FeaturedInfo/>
       <Chart data={userStats} title="User Analytics" grid datakey="New user"/>
       <div className="homeWidgets">
-        <WidgetSm/>
         <WidgetLg/>
       </div>
     </div>
   )
 }
 
-export default Home
+export default Analytics

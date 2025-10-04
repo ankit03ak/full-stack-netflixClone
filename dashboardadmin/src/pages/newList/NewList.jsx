@@ -31,10 +31,6 @@ const NewList = () => {
     setList({...list, [e.target.name] : value}); 
   }
 
-  // console.log(list)
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     createList(list, dispatch); 

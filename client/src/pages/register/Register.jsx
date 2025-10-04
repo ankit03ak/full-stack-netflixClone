@@ -20,7 +20,6 @@ const Register = () => {
       return;
     }
 
-    console.log({ username, email, password }); // ✅ Debugging log
 
     await register({ username, email, password }, dispatch);
     navigate("/login"); 

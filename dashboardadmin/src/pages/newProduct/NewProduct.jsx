@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./newProduct.css";
 import axios from "axios";
+import { toast } from "sonner";
 
 const NewProduct = () => {
   const [movie, setMovie] = useState({});
@@ -19,12 +20,8 @@ const NewProduct = () => {
   const uploadToCloudinary = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET); // Using env variable
-    formData.append("cloud_name", process.env.REACT_APP_CLOUDINARY_CLOUD_NAME); // Using env variable
-
-
-
-
+    formData.append("upload_preset", process.env.REACT_APP_CLOUDINARY_PRESET); 
+    formData.append("cloud_name", process.env.REACT_APP_CLOUDINARY_CLOUD_NAME); 
 
     try {
       const res = await axios.post(
@@ -35,12 +32,12 @@ const NewProduct = () => {
           }
         }
       );
-      console.log("Upload successful", res.data);
-      return res.data.secure_url; // Return the uploaded file URL
+      toast.success("Image uploaded successfully!");
+      return res.data.secure_url;
     } catch (error) {
+      toast.error("Failed to upload image. Please try again.");
       console.error("Upload failed:", error.response ? error.response.data : error.message);
     }
-    
   };
 
 
@@ -86,7 +83,7 @@ const NewProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (uploaded < 5) {
-      alert("Please upload all files first!");
+      toast.error("Please upload all images before saving.");
       return;
     }
 
@@ -99,8 +96,9 @@ const NewProduct = () => {
           },
         }
       ); 
-      alert("Created successfully!");
+      toast.success("Movie added successfully!");
     } catch (error) {
+      toast.error("Failed to add movie. Please try again.");
       console.error("Error saving movie:", error);
     }
   };

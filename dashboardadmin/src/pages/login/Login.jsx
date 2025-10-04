@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { login } from "../../context/authContext/apiCalls";
 import "./login.css";
+import { toast } from "sonner";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,8 +14,10 @@ export default function Login() {
     
     login({ email, password }, dispatch, (success, data) => {
       if (success) {
+        toast.success("Login successful!");
         console.log("Login successful:", data);
       } else {
+        toast.error("Login failed!");
         console.log("Login failed:", data);
       }
     });

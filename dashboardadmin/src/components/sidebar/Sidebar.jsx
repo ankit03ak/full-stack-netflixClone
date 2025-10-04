@@ -1,4 +1,4 @@
-import { BarChart, ChatBubbleOutline, DynamicFeed, LineStyle, MailOutline, PermIdentity, PlayCircleOutline, Report, Timeline, TrendingUp, WorkOutline } from '@mui/icons-material'
+import { LineStyle, MovieCreationOutlined, PermIdentity, PersonAddOutlined, PlayCircleOutline, PlaylistAddOutlined, Timeline, } from '@mui/icons-material'
 import './sidebar.css'
 import { Link } from 'react-router-dom'
 import ListIcon from '@mui/icons-material/List';
@@ -10,20 +10,18 @@ const Sidebar = () => {
         <div className="sidebarMenu">
             <h2 className="sidebarTitle">DashBoard</h2>
             <ul className="sidebarList">
-                <Link to="./" className='link'>  
+                <Link to="/" className='link'>  
                 <li className="sidebarListItem active">
                     <LineStyle className='sidebarIcon'/>
                     Home
                 </li>
                 </Link>
+                <Link to="/analytics" className='link'> 
                 <li className="sidebarListItem">
                     <Timeline className='sidebarIcon'/>
                     Analytics
                 </li>
-                <li className="sidebarListItem">
-                    <TrendingUp className='sidebarIcon'/>
-                    Sales
-                </li>
+                </Link>
             </ul>
             <h2 className="sidebarTitle">Quick Home</h2>
             <ul className="sidebarList">
@@ -45,43 +43,29 @@ const Sidebar = () => {
                     Lists
                 </li>
                 </Link>
-                <li className="sidebarListItem">
-                    <BarChart className='sidebarIcon'/>
-                    Report
-                </li>
             </ul>
-            <h2 className="sidebarTitle">Notification</h2>
+            <h2 className="sidebarTitle">Add Items</h2>
             <ul className="sidebarList">
+                <Link to="/newuser" className='link'> 
                 <li className="sidebarListItem">
-                    <MailOutline className='sidebarIcon'/>
-                    Mail
+                    <PersonAddOutlined className='sidebarIcon'/>
+                    Add new user
                 </li>
+                </Link>
+                <Link to="/newproduct" className='link'> 
                 <li className="sidebarListItem">
-                    <DynamicFeed className='sidebarIcon'/>
-                    Feesback
+                    <MovieCreationOutlined  className='sidebarIcon'/>
+                    Create new movie
                 </li>
+                </Link>
+                <Link to="/newlist" className='link'> 
+
                 <li className="sidebarListItem">
-                    <ChatBubbleOutline className='sidebarIcon'/>
-                    Messages
+                    <PlaylistAddOutlined  className='sidebarIcon'/>
+                    Create new list
                 </li>
-            </ul>
-            <h2 className="sidebarTitle">Staff</h2>
-            <ul className="sidebarList">
-                <li className="sidebarListItem">
-                    <WorkOutline className='sidebarIcon'/>
-                    Manage
-                </li>
-                <li className="sidebarListItem">
-                    <Timeline className='sidebarIcon'/>
-                    Analytics
-                </li>
-                <li className="sidebarListItem">
-                    <Report className='sidebarIcon'/>
-                    Reports
-                </li>
-            </ul>
-            
-           
+                </Link>
+            </ul>   
         </div>
       </div>
     </div>

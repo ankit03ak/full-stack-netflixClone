@@ -16,9 +16,14 @@ const ProductList = () => {
     
 
 
-    const handleDelete = (id) =>{
-        deleteMovie(id, dispatch)
-      }
+const handleDelete = (id) => {
+  const confirmDelete = window.confirm("Are you sure you want to delete this movie?");
+  if (!confirmDelete) return;
+
+  deleteMovie(id, dispatch);
+  alert("Movie deleted successfully!");
+};
+
 
       const columns = [
         { field: "_id", headerName: "ID", width: 90 },

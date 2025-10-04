@@ -16,6 +16,8 @@ import { useContext } from "react";
 import ListList from "./pages/listList/ListList";
 import List from "./pages/list/List";
 import NewList from "./pages/newList/NewList";
+import Analytics from "./pages/analytics/Analytics";
+import { Toaster } from "sonner";
 
 function PrivateRoute({ children }) {
   const { user } = useContext(AuthContext);
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <Router>
+      <Toaster richColors position="top-right"/>
       <Routes>
         {/* Public Route */}
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
@@ -51,6 +54,7 @@ function App() {
                     <Route path="/lists" element={<ListList />} />
                     <Route path="/list/:listId" element={<List />} />
                     <Route path="/newlist" element={<NewList />} />
+                    <Route path="/analytics" element={<Analytics />} />
                   </Routes>
                 </div>
               </>
