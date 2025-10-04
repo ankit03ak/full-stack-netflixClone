@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import "./login.scss";
+import "./login.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
@@ -80,10 +80,13 @@ const handleLogin = async (e) => {
               Sign Up Now
             </b>
           </span>
+          <div>
+  <br />
           <small>
             This page is protected by Google reCAPTCHA to ensure you are not a bot...{" "}
             <b>Learn more</b>
           </small>
+          </div>
         </form>
       </div>
     </div>

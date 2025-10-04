@@ -1,7 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
 import React, { useContext } from "react"
 import './navbar.scss'
-import {ArrowDropDown, Notifications } from '@mui/icons-material';
+import {Notifications } from '@mui/icons-material';
 import { useState } from 'react';
 import { Link,useNavigate } from "react-router-dom";
 import { AuthContext } from '../../context/AuthContext';
@@ -18,26 +18,39 @@ const Navbar = () => {
         return () => (window.onscroll = null); 
     }
 
-    const handleLogout = () => {
-      dispatch({ type: "LOGOUT" }); 
-      localStorage.removeItem("user"); 
-      toast.success("Logged out successful!");
-      navigate("/");
-  };
+const handleLogout = () => {
+  toast.warning("Are you sure you want to logout?", {
+    action: {
+      label: "Yes",
+      onClick: () => {
+        dispatch({ type: "LOGOUT" });
+        localStorage.removeItem("user");
+        toast.success("Logged out successful!");
+        navigate("/");
+      },
+      
+    },
+    cancel: {
+      label: "No",
+    },
+    duration: 5000,
+  });
+};
+
 
   const handleAdmin = () => {
     const res = localStorage.getItem("user");
     const user = JSON.parse(res);
     
     if(user.isAdmin === true){
+      toast.success("Navigating to Admin Dashboard!");
       window.location.href = "https://adminui01.vercel.app/";
     }
     else{
-      alert("You are not an admin 🚫")
+      toast.error("You are not an admin!");
     } 
   };
 
-    // console.log(isScrolled);
 
 
   return (

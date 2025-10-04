@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import "./register.scss";
+import "./register.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
@@ -24,8 +24,8 @@ const handleSubmit = async (e) => {
   const response = await register({ username, email, password }, dispatch);
 
   if (response?.success) {
-    toast.success("Account created successfully! Please log in.");
-    navigate("/login");
+    toast.success("Account created successfully!");
+    navigate("/");
   } else {
     toast.error("Something went wrong. Try again!");
   }

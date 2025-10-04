@@ -1,0 +1,157 @@
+.register {
+  /* 100vw - width of the viewport  */
+  width: 100vw;
+  height: 100vh;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%
+      ),
+      url("https://springboard-cdn.appadvice.com/wp-content/appadvice-v2-media/2016/11/Netflix-background_860c8ece6b34fb4f43af02255ca8f225.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+    box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.register .top {
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.register .top .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register .top .wrapper .logo {
+  height: 45px;
+  cursor: pointer;
+}
+
+.register .top .wrapper .loginButton {
+  background-color: #e50914;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.register .top .wrapper .loginButton:hover {
+  background-color: #f6121d;
+}
+
+.register .container {
+  margin-top: 60px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 50px 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.register .container h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.register .container h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.register .container p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #b3b3b3;
+}
+
+.register .container .input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.register .container .input input {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.register .container .input .alreadyAccount {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #b3b3b3;
+}
+
+.register .container .input .alreadyAccount b {
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.register .container .input .alreadyAccount b:hover {
+  color: #e50914;
+}
+
+.register .container .input .registerButton {
+  padding: 12px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.register .container .input .registerButton:hover {
+  background-color: #f6121d;
+}
+
+.register .container .input .registerButton:disabled {
+  background-color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.register .container .input .error {
+  color: #ff4c4c;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .register .container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .register .container h1 {
+    font-size: 22px;
+  }
+
+  .register .container h2 {
+    font-size: 16px;
+  }
+
+  .register .container .input input {
+    font-size: 13px;
+  }
+}

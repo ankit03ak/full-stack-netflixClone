@@ -1,5 +1,5 @@
 import { ArrowBackOutlined } from '@mui/icons-material'
-import './watch.scss'
+import './watch.css'
 import React, { useEffect, useState } from "react"
 import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
@@ -40,21 +40,23 @@ const Watch = () => {
     }
   }, [movieId]);
 
-  if (!movie) return <div>Loading...</div>;
+if (!movie) return <div className="loadingWatch">Loading...</div>;
 
   return (
-    <div className="watch">
-      <Link to="/">
-      <div className="back">
-        <ArrowBackOutlined/>
-        Home
-      </div>
-      </Link>
-      <video 
-      className="video" autoPlay={true} progress controls
-      src={movie.video}
+     <div className="watch">
+    <Link to="/" className="back">
+      <ArrowBackOutlined className="backIcon" />
+      <span>Home</span>
+    </Link>
+    <div className="videoContainer">
+      <video
+        className="video"
+        autoPlay
+        controls
+        src={movie.video}
       />
     </div>
+  </div>
   )
 }
 

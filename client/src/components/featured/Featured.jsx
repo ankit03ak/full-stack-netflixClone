@@ -1,5 +1,5 @@
 import { InfoOutlined, PlayArrow } from "@mui/icons-material"
-import "./featured.scss"
+import "./featured.css"
 import React, { useEffect, useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
