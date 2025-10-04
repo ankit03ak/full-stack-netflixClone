@@ -39,12 +39,6 @@ function Featured({type}) {
         navigate(`/watch?movieId=${content._id}`); 
     };
 
-    
-
-
-    
-
-
   return (
     <div className='featured'>
         {type && (
