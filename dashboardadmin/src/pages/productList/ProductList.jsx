@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react";
 import { DeleteOutlined } from "@mui/icons-material";
 import { MovieContext } from "../../context/movieContext/MovieContext";
 import { deleteMovie, getMovies } from "../../context/movieContext/apiCalls";
+import { toast } from "sonner";
 
 const ProductList = () => {
     const {movies, dispatch} = useContext(MovieContext)
@@ -17,12 +18,27 @@ const ProductList = () => {
 
 
 const handleDelete = (id) => {
-  const confirmDelete = window.confirm("Are you sure you want to delete this movie?");
-  if (!confirmDelete) return;
+  toast.warning("Are you sure you want to delete this movie?", {
+    action: {
+      label: "Yes",
+      onClick: async () => {
+        try {
+          await deleteMovie(id, dispatch);
 
-  deleteMovie(id, dispatch);
-  alert("Movie deleted successfully!");
+          toast.success("Movie deleted successfully!");
+        } catch (error) {
+          toast.error("Failed to delete movie. Please try again.");
+          console.error("Error deleting movie:", error);
+        }
+      },
+    },
+    cancel: {
+      label: "No",
+    },
+    duration: 5000,
+  });
 };
+
 
 
       const columns = [

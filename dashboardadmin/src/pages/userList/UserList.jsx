@@ -50,7 +50,6 @@ const handleDelete = (id) => {
           },
         });
         setData(res.data);
-        toast.success("Users fetched successfully!");
 
       } catch (error) {
         toast.error("Failed to fetch users. Please try again.");

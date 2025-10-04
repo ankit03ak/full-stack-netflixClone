@@ -1,57 +1,97 @@
+/* Container */
 .newUser {
     flex: 4;
-  }
-  
-  .newUserForm {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Form layout */
+.newUserForm {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .newUserItem {
+    gap: 20px; /* better spacing between items */
+}
+
+/* Form item */
+.newUserItem {
     width: 400px;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    margin-right: 20px;
-  }
-  
-  .newUserItem > label {
-    margin-bottom: 10px;
+}
+
+/* Labels */
+.newUserItem > label {
+    margin-bottom: 8px;
     font-size: 14px;
     font-weight: 600;
-    color: rgb(151, 150, 150);
-  }
-  
-  .newUserItem > input {
-    height: 20px;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 5px;
-  }
-  
-  .newUserGender > input {
-    margin-top: 15px;
-  }
-  
-  .newUserGender>label{
-      margin: 10px;
-      font-size: 18px;
-      color: #555;
-  }
-  
-  .newUserSelect{
-      height: 40px;
-      border-radius: 5px;
-  }
-  
-  .newUserButton{
-      width: 200px;
-      border: none;
-      background-color: darkblue;
-      color: white;
-      padding: 7px 10px;
-      font-weight: 600;
-      border-radius: 10px;
-      margin-top: 30px;
-      cursor: pointer;
-  }
+    color: #777;
+}
+
+/* Input fields */
+.newUserItem > input {
+    height: 35px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.newUserItem > input:focus {
+    border-color: #3b3bb0;
+    box-shadow: 0 0 5px rgba(59,59,176,0.2);
+}
+
+/* Checkbox inputs */
+.newUserItem input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Select dropdown */
+.newUserSelect {
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.newUserSelect:focus {
+    border-color: #3b3bb0;
+    box-shadow: 0 0 5px rgba(59,59,176,0.2);
+}
+
+/* Submit button */
+.newUserButton {
+    width: 200px;
+    border: none;
+    background-color: #3b3bb0;
+    color: white;
+    padding: 10px 0;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.newUserButton:hover {
+    background-color: #3333a0;
+    transform: translateY(-1px);
+}
+
+/* Title */
+.newUserTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}

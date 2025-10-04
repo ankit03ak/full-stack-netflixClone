@@ -1,45 +1,75 @@
-.sidebar{
+/* Sidebar container */
+.sidebar {
     flex: 1;
     height: calc(100vh - 50px);
-    background-color:rgb(251, 251, 255);
+    background-color: #fbfbff; /* soft background */
     position: sticky;
     top: 50px;
+    font-family: 'Roboto', sans-serif;
+    border-right: 1px solid #e0e0e0;
 }
 
-.sidebarWrapper{
+/* Sidebar inner wrapper */
+.sidebarWrapper {
     padding: 20px;
     color: #555;
 }
 
-.sidebarMenu{
+/* Menu sections */
+.sidebarMenu {
+    margin-bottom: 25px;
+}
+
+/* Section titles */
+.sidebarTitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #aaa;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.sidebarTitle{
-    font-size: 13px;
-    color: rgb(187, 186, 186);
-}
-
-.sidebarList{
+/* List container */
+.sidebarList {
     list-style: none;
-    padding: 5px;
+    padding: 0;
+    margin: 0;
 }
-.sidebarListItem{
-    padding: 5px;
+
+/* List items */
+.sidebarListItem {
+    padding: 10px 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    color: #555;
 }
 
-.sidebarListItem.active, .sidebarListItem:hover{
-    background-color: rgb(233, 233, 252);
-}
-
-.sidebarIcon{
-    margin-right: 10px;
+/* Icon inside list item */
+.sidebarIcon {
+    margin-right: 12px;
     font-size: 20px !important;
+    color: #555;
 }
 
+/* Hover and active state */
+.sidebarListItem.active,
+.sidebarListItem:hover {
+    background-color: #e9e9fc;
+    color: #3b3bb0; /* slightly stronger color on hover */
+}
 
+.sidebarListItem.active .sidebarIcon,
+.sidebarListItem:hover .sidebarIcon {
+    color: #3b3bb0;
+}
 
+/* Link styling */
+.link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

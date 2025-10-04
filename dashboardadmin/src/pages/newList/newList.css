@@ -1,44 +1,94 @@
+/* Container */
 .newProduct {
     flex: 4;
-  }
-  
-  .addProductForm {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Form title */
+.addProductTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form layout */
+.addProductForm {
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .addProductItem {
+    gap: 20px; /* spacing between items */
+}
+
+/* Individual form item */
+.addProductItem {
     width: 400px;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    padding: 20px;
-  }
-  
-  .addProductItem > label {
-    color: gray;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Labels */
+.addProductItem > label {
+    color: #555;
     font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .addProductItem > input {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Text inputs and file inputs */
+.addProductItem > input {
     padding: 10px;
-  }
-  
-  .addProductItem > select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.addProductItem > input:focus {
+    border-color: #3b3bb0;
+    box-shadow: 0 0 5px rgba(59,59,176,0.2);
+}
+
+/* Select dropdown */
+.addProductItem > select {
     padding: 10px;
-  }
-  
-  .addProductButton {
-    height: 30px;
-    margin-top: 10px;
-    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.addProductItem > select:focus {
+    border-color: #3b3bb0;
+    box-shadow: 0 0 5px rgba(59,59,176,0.2);
+}
+
+/* Buttons */
+.addProductButton {
+    height: 35px;
+    margin-top: 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 10px;
-    background-color: darkblue;
+    background-color: #3b3bb0;
     color: white;
     font-weight: 600;
     cursor: pointer;
-    align-self: center;
-  }
+    align-self: flex-start; /* aligns buttons to left */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.addProductButton:hover {
+    background-color: #3333a0;
+    transform: translateY(-1px);
+}
