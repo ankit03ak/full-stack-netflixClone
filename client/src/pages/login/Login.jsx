@@ -75,7 +75,7 @@ const handleLogin = async (e) => {
             {isFetching ? "Signing In..." : "Sign In"}
           </button>
           <span>
-            New to Netflix?{" "}
+            New to Streamora?{" "}
             <b className="newToHere" onClick={newToHere}>
               Sign Up Now
             </b>

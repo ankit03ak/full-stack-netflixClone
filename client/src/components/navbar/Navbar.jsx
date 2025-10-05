@@ -62,16 +62,18 @@ const handleLogout = () => {
              alt="logo"
              />
              <Link to="/" className='link'>
-             <span>HomePage</span>
+             <span className="homepage" >HomePage</span>
              </Link>
              <Link to="/series" className='link'>
-             <span>Series</span>
+             <span className="series">Series</span>
              </Link>
              <Link to="/movies" className='link'>
-             <span>Movies</span>
+             <span className="movies">Movies</span>
              </Link>
-             <span>New And Popular</span>
-             <span>My list</span>
+
+             <span className="new-popular">New And Popular</span>
+            
+             <span className="my-list">My list</span>
         </div>
         <div className="right">
             <SearchIcon className='icon'/>
